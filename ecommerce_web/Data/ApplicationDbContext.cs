@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ecommerce_web.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata.Ecma335;
 
 namespace ecommerce_web.Data
 {
@@ -9,5 +11,7 @@ namespace ecommerce_web.Data
         {
             
         }
+
+        public DbSet<Category> Categories { get; set; }
     }
 }
