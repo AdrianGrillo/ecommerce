@@ -29,6 +29,11 @@ namespace ecommerce_web.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
+            if (obj.Name == obj.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("name", "Name and display order cannot be the same");
+            }
+
             // Only save new row if new category is valid according to its model
             if (ModelState.IsValid)
             {
